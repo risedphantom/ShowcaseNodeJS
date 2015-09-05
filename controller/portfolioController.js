@@ -69,3 +69,8 @@ exports.about = function(req, res) {
 exports.contacts = function(req, res) {
     res.render('Contacts', { title: 'Контакты' });
 };
+
+// Error page
+exports.error = function(req, res, next) {
+    res.render('Error', { title: 'Страница не найдена' });
+};

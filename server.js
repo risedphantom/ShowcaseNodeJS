@@ -4,6 +4,7 @@ var compression = require('compression');
 var swig = require('swig');
 var path = require('path');
 var config = require('./config');
+var portfolio = require("./controller/portfolioController");
 
 var app = express();
 
@@ -16,6 +17,9 @@ app.set('view engine', 'html');
 
 // Load routes
 require('./route')(app);
+
+// Handle errors
+app.use(portfolio.error);
 
 app.listen(config.get('port'));
 console.log('Running on port: ' + config.get('port'));
