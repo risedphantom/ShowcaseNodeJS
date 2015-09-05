@@ -1,0 +1,19 @@
+{% extends './Shared/Layout.html' %}
+{% block content %}
+<div id="use">
+	<h1>Как оно работает.</h1>
+	<section>
+		<a href="https://www.raspberrypi.org/products/model-b/" target="_blank" rel="external">Raspberry PI</a>
+	</section>
+	<br>
+	<br>
+	<h1>Системная информация.</h1>
+	<section>
+		<p>
+			<strong>ОС:</strong> {{os_type}} {{os_arch}} ({{os_platform}})<br>
+			<strong>Память:</strong> {{os_freemem}}/{{os_totalmem}} Mb<br>
+			<strong>Процессор:</strong> {{os_cpu}}<br>
+		</p>
+	</section>
+</div>
+{% endblock %}

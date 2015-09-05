@@ -1,0 +1,15 @@
+{
+  "name": "Portfolio",
+  "version": "0.1.0",
+  "description": "Portfolio",
+  "main": "server.js",
+  "author": {
+    "name": "Panov Anton",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.12.3",
+    "log4js": "^0.6.25",
+    "nconf": "^0.7.1"
+  }
+}
