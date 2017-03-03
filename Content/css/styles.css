@@ -1,0 +1,571 @@
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    line-height: 1
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    line-height: 1.2
+}
+
+h3 {
+    margin-top: 2em
+}
+
+ol,ul {
+    margin: 0;
+    padding: 0
+}
+
+.centered {
+    text-align: center
+}
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%
+}
+
+.hidden {
+    display: none!important;
+    visibility: hidden
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px
+}
+
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto
+}
+
+.invisible {
+    visibility: hidden
+}
+
+.clearfix:after,.clearfix:before {
+    content: " ";
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.subhead {
+    font-size: 1.5em;
+    margin-left: 1.4em;
+    text-indent: -1.4em
+}
+
+.subhead2 {
+    font-size: 1.3em;
+    margin-left: 1.4em;
+    text-indent: -1.4em
+}
+
+html {
+    background-color: #fff;
+    height: 100%
+}
+
+main {
+    padding-bottom: 2em
+}
+
+body {
+    min-width: 400px;
+    font-family: 'PT Sans',sans-serif;
+    font-weight: 300;
+    height: 100%;
+    color: #2b1a1a
+}
+
+a {
+    color: #cb4154;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color .75s;
+    -webkit-transition: border-bottom-color 1s
+}
+
+a:hover {
+    border-bottom-color: #cb4154
+}
+
+a[rel=external]:hover {
+    text-decoration: underline
+}
+
+.btn {
+    border: 1px solid #7b7b7b;
+    background-color: #f0f0f0;
+    padding: 4px 12px;
+    transition: background-color .2s ease-in;
+}
+
+.btn:hover {
+    background-color: #e5e5e5;
+    border-color: #cb4154;
+}
+
+.spoiler {
+    display: none;
+}
+
+.extend:target {
+    display: inline;
+}
+
+.extend:target {
+    display: none;
+}
+
+.extend:target ~ .spoiler {
+    display: inline;
+}
+
+.github-callout {
+    text-align: center
+}
+
+.formal-warn {
+    text-align: center;
+    color: #905454;
+    padding-bottom: 1.5em
+}
+
+.github-callout .icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    padding-right: .5em
+}
+
+.github-callout p {
+    margin: 0;
+    padding: 0;
+    display: table-cell;
+    vertical-align: middle
+}
+
+/***************/
+/*
+ * Layout page.
+ */
+
+#page-wrapper {
+    padding: 0 1em;
+    margin: auto
+}
+
+#masthead {
+    padding: 1em 0 .5em;
+    border-bottom: 1px solid #000
+}
+
+#masthead-name {
+    text-align: center;
+    font-size: 3em;
+    color: #2b1a1a;
+    margin-bottom: .25em;
+    display: block;
+    border-bottom: 0;
+    text-decoration: none
+}
+
+#masthead nav a {
+    border-bottom: 0
+}
+
+#main-nav ul {
+    text-transform: uppercase;
+    font-size: 80%;
+    text-align: center
+}
+
+#main-nav li {
+    display: inline;
+    padding: 0 .25em
+}
+
+#main-nav .active {
+    font-weight: 700;
+    border-bottom: 0
+}
+
+/*
+ * Footer.
+ */
+
+#site-footer {
+    text-align: center;
+    font-size: .75em;
+    padding-bottom: 1em
+}
+
+#site-footer ul {
+    list-style-type: none
+}
+
+#site-footer li {
+    line-height: 3
+}
+
+#site-footer .icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    padding-right: .25em
+}
+
+/*
+ * Error page.
+ */
+
+#error section {
+    max-width: 400px;
+    margin: auto
+}
+
+/*
+ * Index page.
+ */
+
+#expertise section {
+    margin-bottom: 2em
+}
+
+#expertise p {
+    line-height: 1.5;
+    margin: 0 0 0 2.25em
+}
+
+#expertise .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    padding-right: .25em
+}
+
+#expertise .pos {
+    fill: #4ab261
+}
+
+#expertise .caution {
+    fill: #f4c633
+}
+
+#expertise .neg {
+    fill: #ca0107
+}
+
+/*
+ * Portfolio page.
+ */
+
+#portfolio {
+    padding-bottom: 3em
+}
+
+#portfolio section {
+    padding-bottom: 1.5em
+}
+
+#portfolio ul {
+    list-style-type: disc;
+    margin-left: 1.25em
+}
+
+#portfolio li {
+    margin-bottom: .5em
+}
+
+#portfolio p {
+    line-height: 1.4;
+    margin-bottom: 1em
+}
+
+#portfolio .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    padding-right: .25em
+}
+
+#portfolio .caution {
+    fill: #f4c633
+}
+
+#portfolio blockquote {
+    font-size: 1em;
+    font-style: italic
+}
+
+/*
+ * Resume page.
+ */
+
+#resume {
+    padding-bottom: 2em
+}
+
+#resume h1 {
+    margin-bottom: 1em
+}
+
+#resume h2 {
+    margin-top: 2em
+}
+
+#resume h3 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: .5em;
+    padding-left: 10.8em
+}
+
+#resume p {
+    line-height: 1.4;
+    margin-bottom: 1em
+}
+
+#resume ul {
+    margin-bottom: .5em;
+    list-style-type: disc;
+    padding-left: 2em;
+}
+
+#resume ul li {
+    line-height: 1.3;
+    margin-bottom: .5em
+}
+
+#resume .place {
+    margin-bottom: .5em;
+}
+
+#resume .dates {
+    width: 10.5em;
+    padding: 0;
+}
+
+#resume .position {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#resume .plaintext {
+    padding-left: 10.8em;
+}
+
+#resume .icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    padding-right: .25em
+}
+
+#resume .caution {
+    fill: #f4c633
+}
+
+/*
+ * WhatIUse page.
+ */
+
+#use section {
+    padding-bottom: 2em
+}
+
+#use ul {
+    margin-left: 1.25em
+}
+
+#use li {
+    margin-bottom: .5em
+}
+
+/*
+ * Who section.
+ */
+
+#who {
+    font-size: .85em;
+    padding: 1em 0
+}
+
+#who a {
+    transition: none
+}
+
+#who a:hover {
+    font-style: italic;
+    text-decoration: none;
+    border-bottom: 0
+}
+
+#who ol {
+    margin-left: 1.25em
+}
+
+#who li {
+    line-height: 2.5
+}
+
+/*
+ * Contacts page.
+ */
+
+#contact .icon {
+    width: 4em;
+    height: 4em;
+    padding-right: 1em;
+    vertical-align: middle
+}
+
+#contact #qrcode {
+    width: 15em;
+    height: 15em
+}
+
+#contact #qrsection {
+    text-align: center
+}
+
+/***************/
+/*
+ * Adaptive.
+ */
+
+@media only screen and (min-width: 40.063em) {
+    #masthead {
+        margin-bottom:0
+    }
+
+    #who {
+        padding: 0;
+        font-size: .75em;
+        margin-bottom: 2em
+    }
+
+    #who li {
+        line-height: 1.5
+    }
+
+    #masthead-name {
+        float: left;
+        text-align: left;
+        margin-bottom: 0
+    }
+
+    #main-nav {
+        float: right
+    }
+
+    #main-nav ul {
+        padding-top: 2.5em
+    }
+
+    #main-nav li {
+        display: inline;
+        padding: 0 0 0 1em
+    }
+
+    #expertise {
+        margin: auto;
+        max-width: 500px
+    }
+
+    #portfolio section {
+        max-width: 700px;
+        margin: auto
+    }
+
+    #portfolio .screenshot {
+        float: right;
+        margin-left: 2em
+    }
+
+    #resume {
+        margin: auto
+    }
+
+    #resume section {
+        max-width: 700px;
+        margin: auto
+    }
+
+    #resume ul {
+        padding-left: 12em;
+    }
+
+    #use section {
+        max-width: 700px;
+        margin: auto
+    }
+
+    #contact section {
+        max-width: 350px;
+        margin: auto
+    }
+
+    #site-footer {
+        text-align: center;
+        max-width: 990px;
+        margin: -3.5em auto auto
+    }
+
+    #site-footer li {
+        display: inline;
+        margin-right: 3em
+    }
+}
+
+@media only screen and (min-width: 64.063em) {
+    #page-container {
+        min-height:100%
+    }
+
+    #page-wrapper {
+        padding-bottom: 2em;
+        max-width: 990px;
+        margin: auto
+    }
+}
+
+@media print {
+    body {
+        font-family: Tahoma,Arial,sans-serif
+    }
+
+    a {
+        color: #000;
+        text-decoration: none
+    }
+}

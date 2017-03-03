@@ -33,7 +33,7 @@ exports.greeting = function(req, res) {
 
 // Index page
 exports.index = function(req, res) {
-    res.render('Index', { title: 'Панов Антон, C# разработчик' });
+    res.render('Index', { title: 'Панов Антон, Менеджер продукта' });
 };
 
 // Resume page

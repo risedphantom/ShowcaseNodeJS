@@ -10,6 +10,8 @@
   "dependencies": {
     "express": "^4.12.3",
     "log4js": "^0.6.25",
-    "nconf": "^0.7.1"
+    "nconf": "^0.7.1",
+	"compression": "^1.6.2",
+	"swig": "^1.4.2"
   }
 }
