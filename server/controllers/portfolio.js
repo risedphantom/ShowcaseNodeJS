@@ -1,4 +1,5 @@
 const os = require('os');
+const pidusage = require('pidusage')
 const router = require('express').Router({});
 
 
@@ -32,14 +33,16 @@ const uses = async (req, res) => {
  * @return {Promise<void>}
  */
 const about = async (req, res) => {
+  const stats = await pidusage(process.pid);
   res.render('about', {
     title: 'Об этом сайте',
     os_type: os.type(),
     os_arch: os.arch(),
     os_platform: os.release(),
-    os_freemem: Math.round(os.freemem() / 1048576),
+    os_usedmem: Math.round(stats.memory / 1048576),
     os_totalmem: Math.round(os.totalmem() / 1048576),
     os_cpu: os.cpus()[0].model,
+    os_cpu_usage: Math.round(stats.cpu),
   });
 };
 
