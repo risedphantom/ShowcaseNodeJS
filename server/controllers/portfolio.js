@@ -1,5 +1,5 @@
 const os = require('os');
-const pidusage = require('pidusage')
+const pidusage = require('pidusage');
 const router = require('express').Router({});
 
 
