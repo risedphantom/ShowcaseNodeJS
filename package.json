@@ -17,7 +17,7 @@
     "express": "4.16.2",
     "express-async-errors": "2.1.2",
     "express-domain-middleware": "0.1.0",
-    "handlebars": "4.0.12",
+    "handlebars": "4.7.7",
     "hbs": "4.0.1",
     "joi": "13.0.2",
     "moment": "2.24.0",
