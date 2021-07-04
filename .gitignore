@@ -12,4 +12,3 @@ config/config.json
 config/development.json
 config/production.json
 config/runtime.json
-package-lock.json
