@@ -40,4 +40,4 @@ jobs:
           push: true
           tags: |
             risedphantom/showcasenodejs:latest
-            risedphantom/showcasenodejs:{{ GITHUB_SHA }}
+            risedphantom/showcasenodejs:${{ GITHUB_SHA }}
