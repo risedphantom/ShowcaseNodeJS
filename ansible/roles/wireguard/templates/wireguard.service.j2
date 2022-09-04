@@ -21,7 +21,6 @@ ExecStart=/usr/bin/docker run \
   -e SERVERURL={{ ansible_default_ipv4.address }} \
   -e SERVERPORT=51820 \
   -e PEERS={{ peers | map('replace', '.', '') | map('regex_replace', '\@\w+', '') | join(',') }} \
-  -e PEERDNS=172.17.0.4 \
   -e INTERNAL_SUBNET=10.6.0.0 \
   -p 51820:51820/udp \
   -v /root/wireguard:/config \
