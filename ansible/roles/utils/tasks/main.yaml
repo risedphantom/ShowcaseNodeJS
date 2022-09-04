@@ -1,0 +1,10 @@
+- name: Install usefull tools
+  apt:
+    update_cache: yes
+    pkg: 
+      - net-tools
+      - mc
+      - htop
+      - curl
+      - python3-pip
+      - jq

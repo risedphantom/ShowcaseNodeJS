@@ -1,0 +1,13 @@
+# ignore everything by default
+*
+
+# Except
+!config
+!logger
+!server
+!site
+!.npmrc
+!index.js
+!package*.json
+!nginx.conf
+!supervisord.conf

@@ -1,0 +1,46 @@
+- name: Install docker
+  include_role:
+    name: geerlingguy.docker
+  vars:
+    docker_install_compose: false
+
+- name: Get current peer state
+  stat:
+    path: /root/wireguard/peer_{{ login }}/privatekey-peer_{{ login }}
+  vars:
+    login: "{{ item.split('@') | first | replace('.', '') }}"
+  with_items: "{{ peers }}"
+  register: current
+
+- name: Create service
+  template:
+    src: wireguard.service.j2
+    dest: /etc/systemd/system/wireguard.service
+  notify: restart wireguard
+
+- name: Flush handlers
+  meta: flush_handlers
+
+- name: Pause for 10 seconds
+  pause:
+    seconds: 10
+
+- name: Send email
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    secure: try
+    username: "{{ mail_username }}"
+    password: "{{ mail_password }}"
+    subject: Your anpanov.ru VPN connection
+    to: "{{ item }}"
+    from: "{{ mail_username }}"
+    body: >
+      Please, install client for your OS, using instructions from https://www.wireguard.com/install/.
+      Then use attached QR code, or RAW configuration file.
+    attach:
+      - /root/wireguard/peer_{{ login }}/peer_{{ login }}.png
+      - /root/wireguard/peer_{{ login }}/peer_{{ login }}.conf
+  vars:
+    login: "{{ item.split('@') | first | replace('.', '') }}"
+  with_items: "{{ current.results | selectattr('stat.exists', '==', false) | map(attribute='item')}}"

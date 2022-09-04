@@ -1,0 +1,11 @@
+- name: Install docker
+  include_role:
+    name: geerlingguy.docker
+  vars:
+    docker_install_compose: false
+
+- name: Create service
+  template:
+    src: portfolio.service.j2
+    dest: /etc/systemd/system/portfolio.service
+  notify: restart portfolio

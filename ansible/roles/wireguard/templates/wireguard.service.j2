@@ -1,0 +1,34 @@
+[Unit]
+Description=WireGuard service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+WorkingDirectory=/root
+ExecStartPre=-/usr/bin/docker stop wireguard
+ExecStartPre=-/usr/bin/docker rm wireguard
+ExecStartPre=/usr/bin/docker pull linuxserver/wireguard
+ExecStart=/usr/bin/docker run \
+  --rm \
+  --name=wireguard \
+  --cap-add=NET_ADMIN \
+  --cap-add=SYS_MODULE \
+  --dns=172.17.0.4 \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/Moscow \
+  -e SERVERURL={{ ansible_default_ipv4.address }} \
+  -e SERVERPORT=51820 \
+  -e PEERS={{ peers | map('replace', '.', '') | map('regex_replace', '\@\w+', '') | join(',') }} \
+  -e PEERDNS=172.17.0.4 \
+  -e INTERNAL_SUBNET=10.6.0.0 \
+  -p 51820:51820/udp \
+  -v /root/wireguard:/config \
+  -v /lib/modules:/lib/modules \
+  --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
+  linuxserver/wireguard
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target

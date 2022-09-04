@@ -1,0 +1,6 @@
+---
+# Use the ACME v2 staging URI for testing things
+certbot_cloudflare_acme_test: "https://acme-staging-v02.api.letsencrypt.org/directory"
+# Production ACME v2 API endpoint
+certbot_cloudflare_acme_live: "https://acme-v02.api.letsencrypt.org/directory"
+certbot_cloudflare_acme_server: "{{ certbot_cloudflare_acme_test }}"

@@ -1,0 +1,59 @@
+# Basic setup
+- hosts: vpn
+  name: Set hostname
+  tags:
+    - vpn
+    - utils
+    - all
+  tasks:
+    - hostname:
+        name: anpanov
+
+- hosts: vpn
+  name: Install utils
+  tags:
+    - utils
+    - vpn
+    - all
+  roles:
+    - utils
+
+# Install VPN server
+- hosts: vpn
+  name: Install VPN
+  tags:
+    - vpn
+    - wireguard
+    - all
+  roles:
+    - wireguard
+  vars:
+    peers:
+      - "risedphantom@gmail.com"
+
+# Install certbot
+- hosts: vpn
+  name: Install certbot
+  tags:
+    - certbot
+    - all
+  roles:
+    - certbot
+  vars_files:
+    - templates/certbot/vars/main.yaml
+  vars:
+    certbot_cloudflare_acme_test: https://acme-v02.api.letsencrypt.org/directory
+    certbot_cloudflare_email: risedphantom@gmail.com
+    certbot_certs:
+      - email: "{{ certbot_cloudflare_email }}"
+        domains:
+          - "*.anpanov.ru"
+
+# Deploy portfolio
+- hosts: vpn
+  name: Deploy portfolio
+  tags:
+    - portfolio
+    - all
+  roles:
+    - portfolio

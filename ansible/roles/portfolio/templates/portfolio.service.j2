@@ -1,0 +1,16 @@
+[Unit]
+Description=Portfolio docker container
+Requires=docker.service
+After=docker.service
+
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=/usr/bin/docker login -u={{ docker_login }} -p={{ docker_password }}
+ExecStartPre=/usr/bin/docker pull risedphantom/showcasenodejs
+ExecStart=/usr/bin/docker run --name portfolio -p 80:80 -p 443:443 -v /etc/letsencrypt/live:/etc/nginx/ssl/live -v /etc/letsencrypt/archive:/etc/nginx/ssl/archive risedphantom/showcasenodejs
+ExecStop=/usr/bin/docker stop -t 2 portfolio
+ExecStopPost=/usr/bin/docker rm -f portfolio
+
+[Install]
+WantedBy=multi-user.target
