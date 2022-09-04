@@ -14,7 +14,6 @@ ExecStart=/usr/bin/docker run \
   --name=wireguard \
   --cap-add=NET_ADMIN \
   --cap-add=SYS_MODULE \
-  --dns=172.17.0.4 \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/Moscow \
