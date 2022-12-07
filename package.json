@@ -14,7 +14,7 @@
     "compression": "1.7.1",
     "config": "1.28.1",
     "cookie-parser": "1.4.3",
-    "express": "4.16.2",
+    "express": "4.17.3",
     "express-async-errors": "2.1.2",
     "express-domain-middleware": "0.1.0",
     "handlebars": "4.7.7",
