@@ -27,9 +27,13 @@
     - all
   roles:
     - wireguard
+  vars_files:
+    - templates/wireguard/vars/main.secret.yaml
   vars:
     peers:
       - "risedphantom@gmail.com"
+      - "panovaam@bk.ru"
+      - "maria2010design1@gmail.com"
 
 # Install certbot
 - hosts: vpn
@@ -40,7 +44,7 @@
   roles:
     - certbot
   vars_files:
-    - templates/certbot/vars/main.yaml
+    - templates/certbot/vars/main.secret.yaml
   vars:
     certbot_cloudflare_acme_test: https://acme-v02.api.letsencrypt.org/directory
     certbot_cloudflare_email: risedphantom@gmail.com
@@ -57,3 +61,5 @@
     - all
   roles:
     - portfolio
+  vars_files:
+    - templates/portfolio/vars/main.secret.yaml

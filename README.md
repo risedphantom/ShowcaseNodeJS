@@ -3,20 +3,27 @@ ShowcaseNodeJS - это легковесный сайт-визитка, напи
 
 Отличный выбор для не front-end разработчика.
 
-## Decrypt secret directory
-All files in secret/* are encrypted with `git-crypt`
-To grant access to this dir you need to generate your own GPG key and export it
+## Decrypting secrets
+All `*.secret.yaml` files are encrypted with `sops`
+
+First of all install `sops` with
+```bash
+wget -q https://github.com/getsops/sops/releases/download/v3.7.3/sops_3.7.3_amd64.deb
+sudo dpkg -i sops_3.7.3_amd64.deb
+```
+To grant access to secret you need to generate your own GPG key and export it's key id
 ```
 gpg --gen-key
 gpg --list-keys
-gpg --export --armor $KEY_ID
 ```
-Then ask repository maintainer to add it to `git-crypt` with
+Then ask repository maintainer to add it to `.sops.yaml`
+
+After that you can decrypt all secrets
 ```
-git-crypt add-gpg-user --trusted $EMAIL
+make decrypt
 ```
-After that you can decrypt secret dir
+!DO NOT FORGET TO ENCRYPT THEM BEFORE COMMIT
+
 ```
-git-crypt unlock
+make encrypt
 ```
-From now on you can use git normally - encrypt/decrypt happen transparently for your key

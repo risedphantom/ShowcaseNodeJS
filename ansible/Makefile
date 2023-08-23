@@ -1,3 +1,5 @@
+.PHONY: install deploy install-vpn
+
 install:
 	ansible-galaxy install -r requirements.yaml
 
